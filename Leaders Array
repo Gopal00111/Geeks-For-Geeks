@@ -1,0 +1,45 @@
+/*package whatever //do not write package name here */
+//@ By Mer Gopal
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner in=new Scanner(System.in);
+		int t=in.nextInt();
+		while(t-->0)
+		{
+		    int n=in.nextInt();
+		    int a[]=new int[n];
+		    for(int i=0;i<n;i++)
+		    {
+		       a[i]=in.nextInt();
+		    }
+		    Leaders(n,a);
+		}
+	}
+	public static void Leaders(int n,int a[])
+	{
+	    ArrayList<Integer> al=new ArrayList<Integer>();
+	    int temp=a[n-1];
+	    al.add(temp);
+	    for(int i=n-2;i>=0;i--)
+	    {
+	        if(a[i]>=temp)
+	        {
+	            temp=a[i];
+	            al.add(temp);
+	        }
+	    }
+	    Collections.reverse(al);
+	    for(int i=0;i<al.size();i++)
+	    {
+	        System.out.print(al.get(i)+" ");
+	    }
+	    System.out.println();
+	    
+	}
+}
